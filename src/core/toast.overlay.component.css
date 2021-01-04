@@ -1,0 +1,52 @@
+/*
+    spinner.overlay.component
+*/
+:host {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 9999;
+}
+
+:host(.toast-overlay-default) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+:host([animation="default"]) {
+  animation-duration: 500ms;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: default-create;
+}
+
+:host([animation="default"][animation-route="create"]) {
+  animation-name: default-create;
+}
+
+:host([animation="default"][animation-route="remove"]) {
+  animation-name: default-remove;
+}
+
+@keyframes default-create {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes default-remove {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
