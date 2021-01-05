@@ -46,10 +46,7 @@ class ToastComponent extends HTMLElement {
 }
 
 if (!window.customElements.get("yyui-toast-component")) {
-  window.customElements.define(
-    "yyui-toast-component",
-    ToastComponent
-  );
+  window.customElements.define("yyui-toast-component", ToastComponent);
 }
 
 export { ToastComponent };

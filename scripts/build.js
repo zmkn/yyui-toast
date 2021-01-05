@@ -4,8 +4,8 @@ import commonjs from "@rollup/plugin-commonjs";
 import { babel } from "@rollup/plugin-babel";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
+import rollupString from "rollup-string";
 import aliases from "./alias.js";
-import string from "./string.js";
 
 const resolve = p => {
   const base = p.split("/")[0];
@@ -59,7 +59,7 @@ const getConfig = name => {
     plugins: [
       nodeResolve(),
       commonjs(),
-      string(),
+      rollupString(),
       alias({
         entries: Object.assign({}, aliases)
       }),
@@ -71,8 +71,9 @@ const getConfig = name => {
     output: [
       {
         file: options.outputFile,
+        name: options.moduleName || "Toast",
         format: options.format,
-        name: options.moduleName || "toast"
+        exports: "auto"
       }
     ]
   };
