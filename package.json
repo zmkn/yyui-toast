@@ -1,6 +1,6 @@
 {
   "name": "yyui-toast",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "yyui-toast is toast component.",
   "main": "dist/yyui.toast.js",
